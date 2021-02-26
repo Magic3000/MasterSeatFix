@@ -56,7 +56,12 @@ namespace MasterSeatFix
                 }
 				var arr = ppList.Select(x => x.Key).ToArray();
 				Array.Sort(arr);
-				VRC.Player masterPlayer = GetPlayer(arr.FirstOrDefault());
+				VRC.Player masterPlayer = PlayerManager.Method_Public_Static_Player_Int32_0(arr.FirstOrDefault());
+				if (masterPlayer == null)
+				{
+					_sout("FixMasterSitting masterPlayer is null", ConsoleColor.Red);
+					return;
+				}
 				foreach (VRC_StationInternal vrc_station in Resources.FindObjectsOfTypeAll<VRC_StationInternal>())
 				{
 					if (vrc_station != null && vrc_station.prop_Player_0 == masterPlayer)
@@ -68,7 +73,7 @@ namespace MasterSeatFix
 			}
 		}
 
-		public static VRC.Player GetPlayer(int int32_0)
+		/*public static VRC.Player GetPlayer(int int32_0)
 		{
 			object players = playermanager.field_Private_List_1_Player_0;
 			object obj = players;
@@ -80,7 +85,7 @@ namespace MasterSeatFix
 				result = player;
 			}
 			return result;
-		}
+		}*/
 
 		public static void _sout(object _in, ConsoleColor color = ConsoleColor.White)
 		{
