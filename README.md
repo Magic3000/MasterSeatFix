@@ -1,2 +1,2 @@
 # MasterSeatFix
-Adds in camera-menu button to fix master who sitting on vrc_station due of caching events after you join room.
+Adds in a camera-menu button to fix master sitting on a vrc_station due to cached events after you join a room
